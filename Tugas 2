@@ -1,0 +1,63 @@
+#include <iostream>
+
+using namespace std;
+
+void persegi(int sisi) {
+    int luas = sisi * sisi;
+    cout << "Luas persegi dengan sisi " << sisi << " adalah " << luas << endl;
+}
+
+void lingkaran(float r) {
+    float luas = 3.14 * r * r;
+    cout << "Luas lingkaran dengan jari-jari " << r << " adalah " << luas << endl;
+}
+
+void persegi_panjang(int p, int l) {
+    int luas = p * l;
+    cout << "Luas persegi panjang dengan panjang " << p << " dan lebar " << l << " adalah " << luas << endl;
+}
+
+int main() {
+    int bilangan;
+
+    cout << "Pilihan Bangun Datar Yang Yngin Dihitung Luasnya : " << endl;
+    cout << "1. Persegi         " << endl;
+    cout << "2. Lingkaran       " << endl;
+    cout << "3. Persegi Panjang " << endl;
+    cout << "Masukkan Pilihan : ";
+    cin >> bilangan;
+
+    switch (bilangan) {
+    case 1: {
+        int sisi;
+
+        cout << "Masukkan Sisi Persegi: ";
+        cin >> sisi;
+        persegi(sisi);
+        break;
+    }
+    case 2: {
+        float r;
+
+        cout << "Masukkan Jari-Jari Lingkaran: ";
+        cin >> r;
+        lingkaran(r);
+        break;
+    }
+    case 3: {
+        int p, l;
+
+        cout << "Masukkan Panjang Persegi Panjang: ";
+        cin >> p;
+        cout << "Masukkan Lebar Persegi Panjang: ";
+        cin >> l;
+        persegi_panjang(p, l);
+        break;
+    }
+    default:
+        cout << "Tidak Sesuai Dengan Kriteria" << endl;
+        break;
+    }
+
+return 0;
+}
