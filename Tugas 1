@@ -1,0 +1,31 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int bilangan1, bilangan2;
+    
+    cout << "Masukkan Bilangan Ganjil : ";
+    cin >> bilangan1;
+    
+    cout << "Masukkan Bilangan Genap : ";
+    cin >> bilangan2;
+    cout << endl;
+    
+    
+    if(bilangan1 % 2==1){
+        cout <<"Bilangan " << bilangan1 << " Sesuai Dengan Kriteria" << endl;
+    }else{
+        cout << "Bilangan " << bilangan1 << " Tidak Sesuai Dengan Kriteria" << endl;
+        
+    }
+    if(bilangan2 % 2==0){
+        cout << "Bilangan " << bilangan2 << " Sesuai Dengan Kriteria" << endl;
+    }else{
+        cout << "Bilangan " << bilangan2 << " Tidak Sesuai Dengan Kriteria" << endl;
+        
+    }
+    
+    return 0;
+}
