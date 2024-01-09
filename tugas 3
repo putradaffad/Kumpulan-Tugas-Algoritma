@@ -1,0 +1,64 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    string namapemesan, tempattujuan;
+   
+    int pilihan;
+    int jumlahTiket;
+    int hargaEkonomi = 100000;
+    int hargaBisnis = 200000;
+    int hargaEksekutif = 300000;
+    int totalHarga;
+    
+    cout << "Masukkan Nama Pemesan : ";
+    cin >> namapemesan;
+    cout << "Tempat Tujuan : ";
+    cin >> tempattujuan;
+    
+    
+ 
+    cout << "Pilih Kelas Tiket :" << endl;
+    cout << "1. Ekonomi   (Rp100,000/tiket)" << endl;
+    cout << "2. Bisnis    (Rp200,000/tiket)" << endl;
+    cout << "3. Eksekutif (Rp300,000/tiket)" << endl;
+    cout << "Masukkan Pilihan (1-3): ";
+    cin >> pilihan;
+ 
+    cout << "Jumlah Tiket Yang Ingin Dipesan : ";
+    cin >> jumlahTiket;
+    cout << endl;
+
+    switch (pilihan) {
+        case 1:
+            totalHarga = jumlahTiket * hargaEkonomi;
+            break;
+        case 2:
+            totalHarga = jumlahTiket * hargaBisnis;
+            break;
+        case 3:
+            totalHarga = jumlahTiket * hargaEksekutif;
+            break;
+        default:
+            cout << "Pilihan Tidak Ada Di Pilihan Menu" << endl;
+            return 1;  
+    }
+
+    if (totalHarga > 500000) {
+        totalHarga *= 0.9;  
+    } else if (totalHarga > 300000) {
+        totalHarga *= 0.95;  
+    } else if (totalHarga > 200000) {
+        totalHarga *= 0.98;  
+    }
+
+    cout << "Pesanan Tiket Atas Nama : " << namapemesan << endl;
+    cout << "Tempat Tujuan Kereta : " << tempattujuan << endl;
+    cout << "Total Harga Tiket : Rp" << totalHarga << endl;
+
+   
+
+    return 0;
+}
