@@ -1,0 +1,94 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+void pertarungan(int darahKarakter, int darahMonster) {
+    while (darahKarakter > 0 && darahMonster > 0) {
+        cout << "OPSI PILIHAN : \n";
+        cout << "1. MENYERANG \n";
+        cout << "2. MEMULIHKAN \n";
+        
+        int pilihan;
+        cout << "PILIHAN : ";
+        cin >> pilihan;
+
+        switch (pilihan) {
+            case 1:
+                cout << "ANDA MENYERANG MONSTER!\n";
+                darahMonster -= 50;
+                break;
+            case 2:
+                cout << "ANDA MEMULIHKAN KARAKTER.\n";
+                darahKarakter += 70;
+                break;
+            default:
+                cout << "PILIHAN TIDAK VALID.\n";
+                break;
+        }
+
+        // Monster menyerang
+        cout << "MONSTER MENYERANG ANDA!\n";
+        darahKarakter -= 40;
+
+        // Menampilkan status kesehatan
+        cout << "DARAH ANDA : " << darahKarakter << " | DARAH MONSTER : " << darahMonster << "\n\n";
+    }
+
+    // Menampilkan hasil pertarungan
+    if (darahKarakter <= 0) {
+        cout << "GAME OVER! MULAI ULANG PERMAINAN.\n";
+    } else {
+        cout << "SELAMAT MONSTER BERHASIL DIKALAHKAN!\n";
+    }
+}
+
+int main() {
+    
+    while (true) {
+        // Pilih karakter
+        cout << "OPSI PILIHAN KARAKTER : \n";
+        cout << "1. PANGERAN\n";
+        cout << "2. KSATRIA\n";
+        cout << "3. PEMANAH\n";
+        
+        int pilihanKarakter;
+        cout << "MASUKKAN PILIHAN KARAKTER : ";
+        cin >> pilihanKarakter;
+
+        // Inisialisasi kesehatan karakter dan monster
+        int darahKarakter = 150;
+        int darahMonster = 250;
+
+        // Memulai pertarungan
+        switch (pilihanKarakter) {
+            case 1:
+                cout << "ANDA MEMILIH PANGERAN.\n\n";
+                pertarungan(darahKarakter, darahMonster);
+                break;
+            case 2:
+                cout << "ANDA MEMILIH KSATRIA.\n\n";
+                pertarungan(darahKarakter, darahMonster);
+                break;
+            case 3:
+                cout << "ANDA MEMILIH PEMANAH.\n\n";
+                pertarungan(darahKarakter, darahMonster);
+                break;
+            default:
+                cout << "PILIHAN KARAKTER TIDAK VALID.\n\n";
+                break;
+        }
+
+        // Tanya apakah ingin bermain lagi
+        char jawab;
+        cout << "APAKAH ANDA INGIN MEMULAI PERMAINAN? (y/n): ";
+        cin >> jawab;
+
+        if (jawab != 'y' && jawab != 'Y') {
+            cout << "THANKS FOR PLAYING! GOODBYE\n";
+            break;
+        }
+    }
+
+return 0;
+}
